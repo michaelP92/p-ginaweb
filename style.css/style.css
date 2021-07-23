@@ -1,0 +1,302 @@
+/* seudoelementos: este tipo de selector funciona como una pequeña funcion donde se almacenan varias variables, son nombradas, para luego dentro de cada uno de los elementos ser utilizados  */
+:root{
+    --blanco:#ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisclaro: #DFE9F3;
+
+/* no solo se puede utilizar para colocer, tambien para variables de estilo  omo letra  o fuente., el que desees*/
+
+
+}
+
+html{
+    font-size: 62%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px; /* 1 rem = 10 px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top,var(--grisclaro) 0%,var(--blanco) );
+
+}
+/* 
+estos dos permiten que los rem sean muy sencillos de usar */
+
+h1{
+
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+h3{
+    font-size: 1.8rem ;
+}
+
+h1,h2,h3 {
+
+    text-align:center;
+}
+
+
+.titulo span{
+
+    font-size: 2rem;
+}
+
+.nav-bg{
+    background-color: var(--secundario) ;
+}
+
+.navegacion-principal{
+
+    display: flex;
+    flex-direction: column;
+   
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+   
+    }
+}
+
+.button{
+
+    background-color: var(--primario) ;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    border:none;
+
+}
+
+.button:hover {
+    cursor:pointer;
+    background-color:var(--secundario);
+}
+
+@media (min-width: 480px) {
+    .button{
+        width:auto;
+    }
+}
+
+.sombra{
+
+    -webkit-box-shadow: 0px 5px 22px 0px rgba(0,0,0,0.47);
+    -moz-box-shadow: 0px 5px 22px 0px rgba(0,0,0,0.47);
+    box-shadow: 0px 5px 22px 0px rgba(0,0,0,0.47);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 2rem ;
+
+}
+
+.contenedor{
+    max-width:120rem;
+   /*  margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto; 
+    esto es igual a la linea de abajo se toman sentido manesillas del reloj*/
+    margin: 0 auto 0 auto;
+}
+
+
+
+.navegacion-principal a {
+
+    color: var(--blanco);
+    display: block;
+    text-align: center;
+    text-decoration: none; /*quita la linea de abajo de los items de navegación*/
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-transform: uppercase;
+
+}
+
+.navegacion-principal a:hover{ /*este es para que de el efecto de cambio de color al colocarse encima de la opción */
+
+    background-color: var(--secundario);
+    color: var(--oscuro);
+}
+
+.hero {
+
+    background-image: url(../img/hero.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    position: relative; /*el padre siempre tiene que estar en posicion relativa*/
+    margin-bottom: 2rem;
+
+}
+.filter {
+    -webkit-backdrop-filter: blur(6px); /* Safari 9+ */
+    backdrop-filter:  blur(6px); /* Chrome and Opera */
+    }
+    
+.contenido-hero{
+    position:absolute;
+    background-color: rgba(0,0,0,.5); /*anterior esto se hace para trnaparencia en color rgb y a la se usa para trasparencia*/
+    background-color: rgb(0 0 0/ 70%);
+    width:100%;
+    height:100%;
+    filter:blur(0rem);
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;   /*alinea las columnas*/
+    justify-content: center; /**alinea las filas**/
+    
+}
+.contenido-hero h2, .contenido-hero p{
+
+    color: var(--blanco) ; 
+    
+}
+
+.contenido-hero a {
+       color: var(--blanco);
+}
+
+.servicios,
+.navegacion-principal, 
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+@media (min-width: 768px) {
+    .servicios{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+}
+
+.servicio{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    
+}
+
+.servicio h3{
+
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+
+    line-height: 2;
+    text-align: center;
+}
+
+
+
+.servicio .iconos {
+
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--secundario);
+    border-radius: 50%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+/**contacto**/
+
+.formulario{
+    background-color: var(--gris);
+    width: min( 60rem);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border:none;
+
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color:var(--primario);
+
+}
+
+.contenedor-campos{
+
+}
+
+.campo{
+
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color:var(--blanco);
+    font-weight:bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.input-text{
+
+    width:100%;
+    border:none;
+    padding:1.5rem;
+    border-radius: 1.5rem;
+}
+
+.enviar .button{
+    width:100%;
+}
+
+.alinear-derecha .button{
+
+    display: flex;
+    justify-content:flex-end;
+
+}
+/* margin permite la separación externa de la linea, padding permite el grosor de la linea en fondo */
+/* especificidad es hojas de estilo en cascada si coloco una caracteristica y luego le hago un cambio, esta va a tomar el cambio sin tener en cuenta el primer parametro
+
+
+especificidad ... es como el navegador va a mostrar el css de acuerdo a lo especifico que sea el selector 
+ */
+
+/*  Colores : Se puede utilizar de muchas maneras de Rgb,hexagecimal  por meido de tres o seis digitos o hsl o rgba */
+
